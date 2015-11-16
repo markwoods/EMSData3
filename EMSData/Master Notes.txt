@@ -1,4 +1,5 @@
 ﻿To Do List
 
-1. Look at team explorer, sync with remote Git repository, figure that out
+1. Look at team explorer, sync with remote Git repository, figure that out - need to make more changes and see
 2. From home page, continue MVC tutorial on layout - look at css, 'master page', and menu
+3. keep working on master page (_layout.cshtml) - bootstrap buttons, CSS, footer bar, menu items, fonts and colors

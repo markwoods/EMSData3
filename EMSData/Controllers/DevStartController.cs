@@ -16,10 +16,15 @@ namespace EMSData.Controllers
 
         // GET: DevStart/Welcome
 
-        public String Welcome(string name, int ID = 1)
+        public ActionResult Welcome(string name, int ID = 1)
         {
-                //return "This is the Welcome action method...";
-                return HttpUtility.HtmlEncode("Hello " + name + ", NumTimes is: " + ID);
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = ID;
+
+            return View();
+            
+            //return "This is the Welcome action method...";
+ //               return HttpUtility.HtmlEncode("Hello " + name + ", NumTimes is: " + ID);
         }
     
     }

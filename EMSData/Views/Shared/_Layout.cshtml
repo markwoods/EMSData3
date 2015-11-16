@@ -17,13 +17,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("EMSData", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*<span class="navbar-brand"><img src="~/Images/Logos/logosm.png" /></span>*@
+
+                @*<span class="navbar-brand" onclick="window.location.href='/Home'" style=" font-family:'gill sans', 'Gill Sans MT' , calibri, 'Trebuchet MS' , sans-serif;"><span style="color:#143D8D;font-weight:900;font-size:28px;">EMS</span><span style="font-weight:600;font-size:24px;color:#696969">data.ca</span></span>*@
+
+                <span class="navbar-brand" onclick="window.location.href='/Home'" ><span class="brandEMS">EMS</span><span class="branddata">data.ca</span></span>
+
+                
+                @*@Html.ActionLink("EMS<span>data.ca</span>", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                        </li>
+                    <li>@Html.ActionLink("Dev", "", "DevStart")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -31,9 +43,25 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        <hr class="hr-heavy"/>        
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="col-xs-12 col-md-4">
+                <button class="btn btn-primary btn-xs" type="button" onclick="window.location.href='/Home';" title="Home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</button>
+                <button class="btn btn-primary btn-xs" type="button" onclick="window.location.href='/Home/Contact';" title="Contact Critical Communication Solutions Inc."><span class="glyphicon glyphicon-envelope"></span> Contact</button>
+                <div class="btn-group dropup">
+                    <button class="btn btn-xs btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Social <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://www.criticalcommunication.ca/blog" target="_blank"><img src="../Images/Social/feed.png" alt="Blog" /> Blog</a></li>
+                        <li><a href="http://www.facebook.com/CriticalComm" target="_blank"><img src="../Images/Social/facebook.png" alt="Facebook" /> Facebook</a></li>
+                        <li><a href="http://www.twitter.com/markwoods911" target="_blank"><img src="../Images/Social/twitter.png" alt="Follow us on Twitter" /> Follow us</a></li>
+                        <li><a href="http://twitter.com/share?url=emsdata.ca&hashtags=EMSData&text=I'm using emsdata.ca as my EMS Fleet Management resource.  Check it out! " target="_blank"><img src="../Images/Social/twitter.png" alt="Tweet#EMSData" /> Tweet #EMSData</a></li>
+                        <li><a href="http://ca.linkedin.com/in/markwoodsCCSI" target="_blank"><img src="../Images/Social/linkedin.png" alt="LinkedIn" /> LinkedIn</a></li>
+                        <li><a href="http://www.criticalcommunication.ca" target="_blank"><img src="../Images/Social/website.png" alt="Website" /> Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 text-muted text-center">Version 3.0</div>
+            <div class="col-xs-12 col-sm-6 col-md-5 text-muted text-right">&copy; @DateTime.Now.Year - Critical Communication Solutions Inc.</div>
         </footer>
     </div>
 
